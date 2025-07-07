@@ -1,27 +1,24 @@
-# 📚 API Tienda de Libros – CRUD con NestJS y PostgreSQL
+# API de Gestión de Tienda de Libros
 
-Este proyecto es una API RESTful desarrollada con **NestJS** que permite gestionar una tienda virtual de libros. Se incluyen funcionalidades completas de **CRUD (Crear, Leer, Actualizar, Eliminar)** para:
+Este proyecto implementa una API desarrollada en NestJS para administrar el flujo básico de una tienda de libros. Permite realizar operaciones CRUD sobre los principales recursos del sistema, como usuarios, libros, categorías y préstamos.
 
-- 👤 Usuarios  
-- 📘 Libros (o productos)  
-- 📄 Préstamos o pedidos  
+## Tecnologías empleadas
 
-## 🚀 Tecnologías utilizadas
+- NestJS (Node.js)
+- PostgreSQL
+- TypeORM
+- Validaciones con class-validator
+- Pruebas de endpoints con Postman
 
-- NestJS  
-- PostgreSQL  
-- TypeORM  
-- Class-validator  
-- Postman  
+## Organización del proyecto
 
-## 📁 Estructura del Proyecto
+La estructura del proyecto está basada en una arquitectura modular por funcionalidades. Cada módulo contiene sus propias entidades, DTOs, servicios y controladores.
 
 src/
-├── main.ts
 ├── app.module.ts
+├── main.ts
 ├── common/
 │ └── filters/
-│ └── http-exception.filter.ts
 ├── modules/
 │ ├── usuario/
 │ ├── libro/
@@ -33,15 +30,22 @@ bash
 Copy
 Edit
 
-## ⚙️ Instalación y ejecución local
+## Instalación y configuración
+
+1. Clonar el repositorio desde GitHub:
 
 ```bash
 git clone https://github.com/Jhoandadp/tienda_libros_final.git
 cd tienda_libros_final
-npm install
-Crea el archivo .env:
+Instalar las dependencias:
 
-env
+bash
+Copy
+Edit
+npm install
+Crear el archivo .env con las variables de entorno necesarias:
+
+ini
 Copy
 Edit
 DB_HOST=localhost
@@ -49,19 +53,19 @@ DB_PORT=5432
 DB_USERNAME=postgres
 DB_PASSWORD=tu_clave
 DB_DATABASE=tienda
-Crea la base de datos:
+Asegurarse de tener la base de datos creada:
 
 sql
 Copy
 Edit
 CREATE DATABASE tienda;
-Inicia el servidor:
+Ejecutar el proyecto:
 
 bash
 Copy
 Edit
 npm run start:dev
-🔄 Endpoints CRUD disponibles
+Endpoints disponibles
 Usuarios
 GET /usuarios
 
@@ -92,6 +96,11 @@ GET /pedidos/:id
 POST /pedidos
 
 PATCH /pedidos/:id
+
+DELETE /pedidos/:id
+
+Pruebas
+Para probar los servicios, se recomienda utilizar Postman. El archivo de colección tiendaonline.postman_collection.json está incluido para facilitar las pruebas manuales de cada endpoint.
 
 DELETE /pedidos/:id
 
