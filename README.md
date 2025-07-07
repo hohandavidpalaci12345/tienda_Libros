@@ -98,6 +98,3 @@ DELETE /pedidos/:id
 🧪 Pruebas con Postman
 Importa el archivo tiendaonline.postman_collection.json en Postman para acceder a todos los endpoints y probarlos fácilmente.
 
-👨‍💻 Autor
-Jhohan David Palacios Murillo
-Tecnólogo en Análisis y Desarrollo de Software – SENA
